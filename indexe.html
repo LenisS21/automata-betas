@@ -73,21 +73,6 @@ function validarPalabra(palabra) {
     }
   }
 
-function crearArray(palabra){
-    let posicionActual = grafo.estados[0]
-    transicionesValidas = [];
-    
-    for (let i = 0; i < palabra.length; i++) {
-      const transicion = grafo.transiciones.find(t => t.origen === posicionActual && t.simbolo === palabra[i]);
-      if (transicion) {
-        posicionActual = transicion.destino;
-        transicionesValidas.push(transicion)
-      } else {
-        console.log("Syntaz error");
-      }
-    }return transicionesValidas;
-  }
-
   function animarTransicion(transicion) {
 
     transicion.style("stroke", "red");
